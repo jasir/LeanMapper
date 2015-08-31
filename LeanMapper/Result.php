@@ -242,6 +242,11 @@ class Result implements \Iterator
 		if (!$this->isDetached and $key === $this->mapper->getPrimaryKey($this->table)) { // mapper is always set when Result is not detached
 			throw new InvalidArgumentException("ID can only be set in detached rows.");
 		}
+
+		if (array_key_exists($key, $this->data[$id]) && ($this->data[$id][$key] === $value)) {
+			return;
+		}
+
 		$this->modified[$id][$key] = true;
 		$this->data[$id][$key] = $value;
 	}
