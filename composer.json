@@ -9,9 +9,7 @@
 		}
 	],
 	"autoload": {
-		"psr-0": {
-			"LeanMapper": ""
-		}
+		"classmap": [ "LeanMapper/" ]
 	},
 	"require": {
 		"dg/dibi": "~2.0"
